@@ -1,0 +1,25 @@
+%nav.navbar.navbar-toggleable-sm.fixed-top.navbar-inverse.bg-inverse.indented-2
+  %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  = link_to "Material", root_path, class: "navbar-brand"
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        %a.nav-link{:href => "#"}
+          Home
+          %span.sr-only (current)
+      %li.nav-item
+        %a.nav-link{:href => "#"}
+          Link
+      %li.nav-item
+        %a.nav-link.disabled{:href => "#"}
+          Disabled
+      %li.nav-item.dropdown
+        = link_to "Dropdown", "http://example.com", id: "dropdown01", class: "nav-link dropdown-toggle", aria: { expanded: false, haspopup: true }, data: { toggle: "dropdown" }
+        .dropdown-menu{"aria-labelledby" => "dropdown01"}
+          =link_to "Action", "#", class: "dropdown-item"
+          =link_to "Another Action", "#", class: "dropdown-item"
+          =link_to "Yet Another Action", "#", class: "dropdown-item"
+    = form_tag("/search", method: "get", class: "form-inline my-2 my-lg-0") do
+      = text_field_tag "search", nil, placeholder: "Search", class: "form-control mr-sm-2"
+      = submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0"
